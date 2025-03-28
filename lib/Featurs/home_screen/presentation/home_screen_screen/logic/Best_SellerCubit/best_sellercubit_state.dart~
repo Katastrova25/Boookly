@@ -1,0 +1,6 @@
+part of 'best_sellercubit_bloc.dart';
+
+@immutable
+sealed class BestSellercubitState {}
+
+final class BestSellercubitInitial extends BestSellercubitState {}
