@@ -10,10 +10,11 @@ class book_details extends StatelessWidget {
     required this.image,
   });
 
-  final String title;
-  final String author;
+  final String? title;
+  final List<String>? author;
 
-  final String image;
+  final String? image;
+  final String? id;
 
   @override
   Widget build(BuildContext context) {
@@ -23,25 +24,26 @@ class book_details extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, "s2");
+              Navigator.pushNamed(context, "s2",arguments: id);
             },
             child: Container(
-              margin: EdgeInsets.only(left: 20),
+              margin: const EdgeInsets.only(left: 20),
               width: 70,
               height: 105,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage('$image'),
+                  image: NetworkImage(image ??
+                      'https://th.bing.com/th/id/OIP.0eEQNsj8u1srnr7h500VyQHaLH?pid=ImgDet&w=198&h=297&c=7&dpr=2.3'),
                   fit: BoxFit.fill,
                 ),
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             height: 105,
             width: 250,
             child: Column(
@@ -49,21 +51,22 @@ class book_details extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '$title',
-                  style: TextStyle(
-                    overflow: TextOverflow.ellipsis,
-                      fontWeight: FontWeight.w800, fontSize: 20),
+                  "$title",
+                  style: const TextStyle(
+                      overflow: TextOverflow.ellipsis,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 20),
                 ),
-                Text(
+                const Text(
                   'The Book of the Prophets',
                   style: TextStyle(fontSize: 16),
                 ),
                 Text(
                   overflow: TextOverflow.ellipsis,
-                  '$author',
-                  style: TextStyle(fontSize: 10),
+                  "$author",
+                  style: const TextStyle(fontSize: 10),
                 ),
-                Row(
+                const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(

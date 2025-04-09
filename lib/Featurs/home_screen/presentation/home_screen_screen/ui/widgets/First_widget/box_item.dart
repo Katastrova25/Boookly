@@ -12,20 +12,20 @@ class box_item extends StatelessWidget {
     return BlocBuilder<BestSellercubit, BestSellerState>(
         builder: (context, state) {
       if (state is BestSellerSuccess) {
-        return
-           ListView.builder(
-              itemBuilder: (context, index) {
-                return book_details(
-                    title: state.books[index].volumeInfo!.title!,
-                    author: state.books[index].volumeInfo!.authors![0],
-                    image: state
-                        .books[index].volumeInfo!.imageLinks!.thumbnail!);
-              },
-              itemCount: state.books.length);
+        return ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return book_details(
+                  title: state.books[index].volumeInfo.title,
+                  author: state.books[index].volumeInfo.authors,
+                  image: state.books[index].volumeInfo.imageLinks!.thumbnail);
+            },
+            itemCount: state.books.length);
       } else if (state is BestSellerError) {
-        return (Text("${state.error}"));
+        return (Text(state.error));
       } else {
-        return Center(child: CircularProgressIndicator());
+        return const Center(child: CircularProgressIndicator());
       }
     });
   }
