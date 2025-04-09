@@ -14,7 +14,6 @@ class book_details extends StatelessWidget {
   final List<String>? author;
 
   final String? image;
-  final String? id;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class book_details extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, "s2",arguments: id);
+              Navigator.pushNamed(context, "s2");
             },
             child: Container(
               margin: const EdgeInsets.only(left: 20),
