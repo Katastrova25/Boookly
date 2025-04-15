@@ -53,7 +53,7 @@ class HomeScreenRepo implements HomeRepo {
     try {
       var result = await apiService.getBooks(
           endpoint:
-              "books/v1/volumes?Filtering=free-ebooks&sorting=sorting&pXDzdJ_1E3oC=&q=20");
+              "books/v1/volumes?Filtering=free-ebooks&sorting=sorting&pXDzdJ_1E3oC=&q=20 ");
       List<BookModel> books = [];
       for (var item in result['items']) {
         books.add(BookModel.fromJson(item));

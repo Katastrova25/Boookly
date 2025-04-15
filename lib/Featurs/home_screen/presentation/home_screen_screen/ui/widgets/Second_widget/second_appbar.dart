@@ -7,7 +7,7 @@ class second_appbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 53,
         ),
         Padding(
@@ -15,10 +15,10 @@ class second_appbar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image(image: AssetImage('images/Logo.png')),
+              const Image(image: AssetImage('images/Logo.png')),
               IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.add_shopping_cart_outlined,
                     color: Colors.white,
                   ))

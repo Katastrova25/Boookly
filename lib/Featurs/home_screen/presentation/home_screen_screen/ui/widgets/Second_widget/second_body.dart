@@ -6,7 +6,7 @@ class second_body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         second_appbar(),
       ],

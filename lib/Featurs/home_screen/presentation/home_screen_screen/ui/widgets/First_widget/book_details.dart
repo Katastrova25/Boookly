@@ -1,19 +1,12 @@
+import 'package:bookly2/Featurs/home_screen/data/model/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../star.dart';
 
 class book_details extends StatelessWidget {
-  const book_details({
-    super.key,
-    required this.title,
-    required this.author,
-    required this.image,
-  });
+  const book_details({super.key, required this.bookModel});
 
-  final String? title;
-  final List<String>? author;
-
-  final String? image;
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +16,7 @@ class book_details extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, "s2");
+              Navigator.pushNamed(context, "s2", arguments: {"book": bookModel});
             },
             child: Container(
               margin: const EdgeInsets.only(left: 20),
@@ -31,7 +24,8 @@ class book_details extends StatelessWidget {
               height: 105,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(image ??
+                  image: NetworkImage(bookModel
+                          .volumeInfo.imageLinks!.thumbnail ??
                       'https://th.bing.com/th/id/OIP.0eEQNsj8u1srnr7h500VyQHaLH?pid=ImgDet&w=198&h=297&c=7&dpr=2.3'),
                   fit: BoxFit.fill,
                 ),
@@ -50,7 +44,7 @@ class book_details extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "$title",
+                  "${bookModel.volumeInfo.title}",
                   style: const TextStyle(
                       overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.w800,
@@ -62,7 +56,7 @@ class book_details extends StatelessWidget {
                 ),
                 Text(
                   overflow: TextOverflow.ellipsis,
-                  "$author",
+                  "${bookModel.volumeInfo.authors}",
                   style: const TextStyle(fontSize: 10),
                 ),
                 const Row(

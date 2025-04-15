@@ -17,9 +17,9 @@ class box_item extends StatelessWidget {
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return book_details(
-                  title: state.books[index].volumeInfo.title,
-                  author: state.books[index].volumeInfo.authors,
-                  image: state.books[index].volumeInfo.imageLinks!.thumbnail);
+
+                  bookModel: state.books[index],
+                 );
             },
             itemCount: state.books.length);
       } else if (state is BestSellerError) {
