@@ -18,11 +18,11 @@ class book_item extends StatelessWidget {
     return InkWell(
       splashColor: const Color(0xff120531),
       onTap: () {
-        Navigator.pushNamed(context, "s2",arguments: {"book": books});
+        Navigator.pushNamed(context, "s2",arguments: books);
       },
       child: Container(
         margin: index == 0 ? const EdgeInsets.only(left: 30) : const EdgeInsets.all(5),
-        width: index == 0 ? 163 : 143,
+        width: index == 0 ? 174 : 143,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(

@@ -1,7 +1,6 @@
 import 'package:bookly2/Featurs/home_screen/presentation/home_screen_screen/logic/All_BooksCubit/All_bookcubit.dart';
 import 'package:bookly2/Featurs/home_screen/presentation/home_screen_screen/logic/All_BooksCubit/All_bookstat.dart';
 import 'package:bookly2/Featurs/home_screen/presentation/home_screen_screen/ui/widgets/First_widget/book_items.dart';
-import 'package:bookly2/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

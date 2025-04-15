@@ -21,7 +21,7 @@ class second_screen extends StatelessWidget {
         children: [
           const second_appbar(),
           favorite_widget(book: book),
-           SizedBox(
+           const SizedBox(
             height: 70,
           ),
           const Padding(

@@ -2,7 +2,6 @@ import 'package:bookly2/Core/Utills/Apiservice.dart';
 import 'package:bookly2/Featurs/home_screen/data/repository/home_screen_repository.dart';
 import 'package:bookly2/Featurs/home_screen/presentation/home_screen_screen/logic/All_BooksCubit/All_bookcubit.dart';
 import 'package:bookly2/Featurs/home_screen/presentation/home_screen_screen/logic/Best_SellerCubit/best_sellercubit_bloc.dart';
-import 'package:bookly2/Featurs/home_screen/presentation/home_screen_screen/logic/Favorite_Cubite/FavoriteCubit.dart';
 import 'package:bookly2/Featurs/home_screen/presentation/home_screen_screen/ui/Second_screen.dart';
 import 'package:bookly2/Featurs/splash/presentation/splash_screen/ui/Splash_screen.dart';
 import 'package:dio/dio.dart';
@@ -30,10 +29,6 @@ class books extends StatelessWidget {
               create: (context) =>
                   BestSellercubit(HomeScreenRepo(ApiService(dio: Dio())))
                     ..getBestSellers()),
-          BlocProvider(
-              create: (context) =>
-                  favoriteCubit(HomeScreenRepo(ApiService(dio: Dio())))
-                    ..favoritebook(category: "Category")),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
