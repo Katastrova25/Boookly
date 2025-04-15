@@ -14,14 +14,14 @@ class container extends StatelessWidget {
             child: Container(
               width: 48,
               height: 150,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   bottomLeft: Radius.circular(20),
                 ),
               ),
-              child: Center(
+              child: const Center(
                   child: Text(
                     "19.99",
                     style: TextStyle(
@@ -35,13 +35,13 @@ class container extends StatelessWidget {
             child: Container(
               width: 48,
               height: 150,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Color(0xffEF8262),
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(20),
                     bottomRight: Radius.circular(20),
                   )),
-              child: Center(
+              child: const Center(
                   child: Text("Free Preview",
                       style: TextStyle(
                           color: Colors.white,
