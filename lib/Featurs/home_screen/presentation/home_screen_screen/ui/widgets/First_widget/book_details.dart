@@ -44,30 +44,33 @@ class book_details extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
+                  maxLines: 1,
                   "${bookModel.volumeInfo.title}",
                   style: const TextStyle(
                       overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.w800,
                       fontSize: 20),
                 ),
-                const Text(
-                  'The Book of the Prophets',
-                  style: TextStyle(fontSize: 16),
+                 Text(
+                  maxLines: 1,
+                   overflow: TextOverflow.visible,
+                  '${bookModel.volumeInfo.description}',
+                  style: const TextStyle(fontSize: 16),
                 ),
                 Text(
                   overflow: TextOverflow.ellipsis,
                   "${bookModel.volumeInfo.authors}",
-                  style: const TextStyle(fontSize: 10),
+                  style:  const TextStyle(fontSize: 10),
                 ),
-                const Row(
+                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        "4.9",
-                        style: TextStyle(
+                       Text(
+                        "${bookModel.volumeInfo.pageCount}",
+                        style: const TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),
-                      star(),
+                      star(book: bookModel,),
                     ]),
               ],
             ),

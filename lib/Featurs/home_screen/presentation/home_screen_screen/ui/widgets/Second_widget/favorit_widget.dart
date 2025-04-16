@@ -28,8 +28,8 @@ class favorite_widget extends StatelessWidget {
             height: 243,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: const DecorationImage(
-                  image: AssetImage("book.volumeInfo.imageLinks!.thumbnail"),
+                image: DecorationImage(
+                  image: NetworkImage(book.volumeInfo.imageLinks!.thumbnail),
                   fit: BoxFit.fill,
                 )),
           ),
@@ -42,6 +42,8 @@ class favorite_widget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               "${book.volumeInfo.title}",
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 33),
             ),
@@ -49,9 +51,11 @@ class favorite_widget extends StatelessWidget {
               "by ${book.volumeInfo.authors}",
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
-            const star(),
+            star(
+              book: book,
+            ),
             const SizedBox(
-              height: 8,
+              height: 50,
             ),
             const container(),
           ],
